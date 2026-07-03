@@ -1,0 +1,24 @@
+{
+  "name": "shubhi.nodejs",
+  "version": "1.0.0",
+  "description": "git config --global user.name \"Shubhi Saxena\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhi0811/Shubhi.Nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shubhi0811/Shubhi.Nodejs/issues"
+  },
+  "homepage": "https://github.com/shubhi0811/Shubhi.Nodejs#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

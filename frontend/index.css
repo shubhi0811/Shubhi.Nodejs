@@ -41,6 +41,7 @@ h1 {
   width: 300px;
   height: 580px; 
   margin: 3px auto;
+  border-radius: 8px;
 }
 
 #card-img{
@@ -53,9 +54,13 @@ h1 {
 img{
   width: 300px;
   height: 300px;
+  border-radius: 8px;
 }
 
 #action{
   text-align: center;
   
+}
+button{
+  width: 100%;
 }

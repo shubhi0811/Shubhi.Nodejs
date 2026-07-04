@@ -24,4 +24,4 @@ function toggle(){
   document.getElementById("img").src=users[curUserId].image;
   // name
   document.getElementById("card-name").innerText=users[curUserId].name;
-}
+} 

@@ -37,6 +37,10 @@ h1 {
 #card{
   align-items: center;
   margin-top: 5px;
+  border: 3px solid black;
+  width: 300px;
+  height: 580px; 
+  margin: 3px auto;
 }
 
 #card-img{
@@ -53,4 +57,5 @@ img{
 
 #action{
   text-align: center;
+  
 }

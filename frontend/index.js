@@ -21,7 +21,11 @@ function toggle(){
   else
     curUserId=0;
   // image
-  document.getElementById("img").src=users[curUserId].image;
+  document.getElementById("img").src = users[curUserId].image;
   // name
-  document.getElementById("card-name").innerText=users[curUserId].name;
+  document.getElementById("card-name").innerText = users[curUserId].name;
+
+  // gender
+  document.getElementById("card-gender").innerText = users[curUserId].gender;
+
 } 

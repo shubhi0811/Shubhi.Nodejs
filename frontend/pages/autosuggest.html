@@ -3,21 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gear Bullet Title</title>
-    <!-- Symbols -->
-    <span>&#9881;</span> 
-    <span>&#x2022; online |</span> 
-    <span>&#9201;</span> ms
-    
-    <h1>BeingInfinity</h1>
-    <div>
-        <p>One million phrases. Four algorithms. Prefix Based Auto Suggest</p>
-    </div>
-    <span>&#128269 <input placeholder ="Start typing to search "></span>
+    <title>Easy Auto Suggest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
 
-  
+        .top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        .being {
+            color: blue;
+        }
+
+        .search {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="top">
+        <div>⚙</div>
+        <div>• online | 🕑 ms</div>
+    </div>
+
+    <h1><span class="being">Being  </span>Infinity</h1>
+    <p>One million phrases. Four algorithms. Prefix Based Auto Suggest</p>
+
+    <div style="display: inline-flex; align-items: center; border: 2px solid black; padding: 8px 10px; width: 300px; border-radius: 20px;">
+        <span style="margin-right: 8px; font-size: 16px;">🔍</span>
+        <input type="text" placeholder="Start Typing to search phrases..." style="border: none; outline: none; width: 100%;">
+    </div>
+
+    <div style="border:1px solid black; width:300px; margin:8px auto; padding:8px;">Suggestion Box</div>
 </body>
 </html>

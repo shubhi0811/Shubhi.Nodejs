@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Auto Suggest</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,22 +33,97 @@
             width: 300px;
             display: inline-block;
         }
+
+        #suggestion-box {
+            width: 320px;
+            margin: auto;
+            text-align: left;
+        }
+
+        #suggestion-box div {
+            padding: 8px;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #suggestion-box div:hover {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
+
 <body>
+
     <div class="top">
         <div>⚙</div>
         <div>• online | 🕑 ms</div>
     </div>
 
-    <h1><span class="being">Being  </span>Infinity</h1>
+    <h1><span class="being">Being</span> Infinity</h1>
+
     <p>One million phrases. Four algorithms. Prefix Based Auto Suggest</p>
 
-    <div style="display: inline-flex; align-items: center; border: 2px solid black; padding: 8px 10px; width: 300px; border-radius: 20px;">
-        <span style="margin-right: 8px; font-size: 16px;">🔍</span>
-        <input type="text" placeholder="Start Typing to search phrases..." style="border: none; outline: none; width: 100%;">
+    <div style="display:inline-flex; align-items:center; border:2px solid black; padding:8px 10px; width:300px; border-radius:20px;">
+        <span style="margin-right:8px;">🔍</span>
+
+        <input
+            type="text"
+            id="search-box"
+            placeholder="Start Typing to search phrases..."
+            style="border:none; outline:none; width:100%;"
+        >
     </div>
 
-    <div style="border:1px solid black; width:300px; margin:8px auto; padding:8px;">Suggestion Box</div>
+    <div id="suggestion-box"></div>
+
 </body>
+
+<script>
+
+var searchBox = document.getElementById("search-box");
+var suggestionBox = document.getElementById("suggestion-box");
+
+searchBox.addEventListener("input", function () {
+
+    //1 get user typed text
+    var userInput = searchBox.value;
+
+    if (userInput.trim() == "") {
+        suggestionBox.innerHTML = "";
+    }
+    else {
+
+        var url1 = "https://autosuggest-backend.onrender.com/api/autosuggest?q=";
+        var url3 = "&algorithm=brute&limit=10&weighted=false";
+        var url = url1 + userInput + url3;
+
+        //2 make api call to get suggestions
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+
+                console.log(data);
+
+                var resultArray = data.results;
+                var htmlResults = "";
+
+                for (var i = 0; i < resultArray.length; i++) {
+                    htmlResults += "<div>" + resultArray[i] + "</div>";
+                }
+
+                //3 display results in html
+                suggestionBox.innerHTML = htmlResults;
+            })
+
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+});
+
+</script>
+
 </html>
